@@ -8,4 +8,4 @@ Alakítsd át a programot úgy, hogy fájl helyett egy webszerver adja vissza az
  ```
 
 **Tipp:**
-A beépített webes kiszolgáló helyett próbáld ki az [Express](http://expressjs.com) és a [Koa](koajs.com) webszervereket!
+A beépített webes kiszolgáló helyett próbáld ki az [Express](http://expressjs.com) és a [Koa](http://koajs.com) webszervereket!
