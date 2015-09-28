@@ -20,6 +20,6 @@ var server = http.createServer(function (request, response){
   }
 });
 
-server.listen(1234, function() {
-  console.log("Server listening on: http://localhost:1234");
+server.listen(3000, function() {
+  console.log("Server listening on: http://localhost:3000");
 });
