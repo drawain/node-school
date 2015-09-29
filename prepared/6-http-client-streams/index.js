@@ -2,7 +2,8 @@
 
 var http = require('http');
 
-// HTTP get returns a stream which has to be concatenated to get the full response
+// A HTTP.get egy stream-el tér vissza, amely részekben adja vissza a választ, ezt össze kell konkatenálni, hogy
+// megkapjuk az egészet
 http.get('http://www.google.hu', function (response) {
   response.setEncoding('utf8');
 

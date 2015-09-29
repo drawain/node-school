@@ -8,7 +8,7 @@ console.log(myLibrary, folder, myAnotherLibrary);
 
 
 
-// A "require" is a single event within an application runtime
+// Egy library/fájl "require"-el való behívása az alkalmazás futása során egyszer történik meg!
 for (let i = 0; i < 5; i++) {
   let randomNumber = require('./random');
   console.log('#' + i + ' ', randomNumber);

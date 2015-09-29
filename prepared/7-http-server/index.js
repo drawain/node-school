@@ -5,7 +5,7 @@ var url = require('url');
 
 var server = http.createServer(function (request, response){
 
-  // Sample routing
+  // Routingra példa
   if (/^\/api\//.test(request.url)) {
     response.end(`It was an api request!`);
 
