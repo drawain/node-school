@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>My Super Giffy Collaborative Application</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/cosmo/bootstrap.min.css" rel="stylesheet"
+          integrity="sha256-IF1P9CSIVOaY4nBb5jATvBGnxMn/4dB9JNTLqdxKN9w= sha512-UsfHxnPESse3RgYeaoQ7X2yXYSY5f6sB6UT48+F2GhNLqjbPhtwV2WCUQ3eQxeghkbl9PioaTOHNA+T0wNki2w=="
+          crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row" style="margin-top: 20px;">
+            <form class="form-inline" action="/" method="POST">
+                <div class="form-group">
+                    <input type="text" name="add" class="form-control" placeholder="Mit szeretnél látni?"/>
+                </div>
+                <button class="btn btn-default" type="submit">Keres</button>
+            </form>
+        </div>
+
+        <div id="image-store" class="row"></div>
+    </div>
+
+    <script>
+        $(function() {
+            $.getJSON('/images', function(images) {
+                var $imageStore = $('#image-store');
+                images.forEach(function(image) {
+                    $imageStore.append('<img src="' + image + '" />');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
