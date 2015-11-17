@@ -14,3 +14,11 @@ Az előadások példakódjai.
 
 ### Test
 A félévi beadandó feladat.
+
+
+## Tesztfutattás Windowson
+A tesztek futtatásához Mocha és Chai szükséges, azonban a projektbe telepítés után a Windows nem biztos, hogy beteszi az aktuális path-ba a Mocha futtatófájlt. Ha ilyen probléma lép fel, akkor használjuk közvetlen eléréssel, pl. így:
+
+```bash
+node_modules\.bin\mocha ./tests
+```
