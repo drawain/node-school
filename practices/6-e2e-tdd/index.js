@@ -3,31 +3,24 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
+var store = require('./store').create();
 
 app.use(bodyParser.json());
 
-var books = [];
-
 app.get('/books', function(req, res) {
-  res.status(200).send({ books: books });
+  res.status(200).send({ books: store.getAll() });
 });
 
 app.post('/books', function(req, res) {
-  var book = req.body;
-
-  if (!book.title) {
-    res.status(400).send({ error: 'Title is missing' });
-  } else {
-    book.id = books.length + 1;
-    books.push(book);
-    res.status(201).send(book);
-  }
-
+  store.saveBook(req.body, function(err, book) {
+    if (err) res.status(400).send({ error: err });
+    else res.status(201).send(book);
+  });
 });
 
 app.delete('/books', function(req, res) {
-  books = [];
-  res.status(200).send(books);
+  store.removeAll();
+  res.status(200).send(store.getAll());
 });
 
 app.listen(3000, function () {
