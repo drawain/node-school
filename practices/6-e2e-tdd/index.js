@@ -23,6 +23,12 @@ app.delete('/books', function(req, res) {
   res.status(200).send(store.getAll());
 });
 
+
+app.put('/books/:id', function(req, res) {
+  var book = store.updateBook(parseFloat(req.params.id), req.body);
+  res.status(200).send(book);
+});
+
 app.listen(3000, function () {
   console.log('Library service is listening on port ', this.address().port);
 });

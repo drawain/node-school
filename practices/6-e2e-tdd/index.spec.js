@@ -90,7 +90,7 @@ describe('Library', function() {
     it('should respond with empty array', function(done) {
       request(app)
         .post('/books')
-        .send({ title: 'Harry Potter', amount: 4 })
+        .send(book)
         .end(function() {
           request(app)
             .delete('/books')
@@ -101,7 +101,7 @@ describe('Library', function() {
     it('should delete all of the books', function(done) {
       request(app)
         .post('/books')
-        .send({ title: 'Harry Potter', amount: 4 })
+        .send(book)
         .end(function() {
           request(app)
             .delete('/books')
@@ -114,5 +114,22 @@ describe('Library', function() {
   });
 
 
+  describe('PUT /books/:id', function() {
+
+    it('should update a book', function(done) {
+      request(app)
+        .post('/books')
+        .send(book)
+        .end(function() {
+          request(app)
+            .put('/books/1')
+            .send({ title: 'Harry', amount: 2 })
+            .expect(200, { id: 1, title: 'Harry', amount: 2 }, function() {
+              checkBooks([{ id: 1, title: 'Harry', amount: 2 }], done);
+            });
+        });
+    });
+
+  });
 
 });
