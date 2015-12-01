@@ -21,6 +21,12 @@ class Store {
     this._books = [];
   }
 
+  updateBook(bookId, newData) {
+    var book = this._books.find(book => book.id === bookId);
+    book.title = newData.title;
+    book.amount = newData.amount;
+  }
+
   static create() {
     return new Store();
   }

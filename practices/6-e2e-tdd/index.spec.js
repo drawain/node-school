@@ -87,7 +87,7 @@ describe('Library', function() {
 
   describe('DELETE /books', function() {
 
-    it('should respond with empty array', function() {
+    it('should respond with empty array', function(done) {
       request(app)
         .post('/books')
         .send({ title: 'Harry Potter', amount: 4 })
