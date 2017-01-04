@@ -107,3 +107,4 @@ Az előző példát folytatva, ha Bob szeretné megnézni üzeneteit, akkor a k�
 Kiindulásként használható a jelen leíráshoz mellékelt `morse-code-table.js` fájl, mely a Morze-kódtáblát tartalmazza.
 Nem kötelező a mellékelt kódtábla használata, bátorítunk mindenkit a kreativabb megoldásokra.
 - Az alkalmazás kódja legyen könnyen olvasható, magától értetődő, kövesse a clean code elveit. Legyenek hozzá automatizált tesztek. A kommenteket kerüljük.
+- Elegendő az alkalmazás állapotát memóriában tárolni, nem szükséges fájlba/adatbázisba/stb. perzisztálni.
