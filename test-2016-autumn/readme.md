@@ -43,6 +43,7 @@ Paraméterek:
 - name: opcionális, a felhasználó teljes neve
 
 Lehetséges HTTP válaszok:
+
 1. `400` - ha már létező felhasználónévvel akarnak regisztrálni
 2. `200` - egyébként. Ilyenkor a válasz törzse tartalmaz egy egyedi 'tokent', ami a későbbi kérésekben a felhasználót
 azonosítani fogja. Például `{ "token": "ABCDEFGH123456" }`.
@@ -63,6 +64,7 @@ azt így teheti meg:
     { "message": "...---..." }
 
 Lehetséges HTTP válaszok:
+
 1. `401` - ha az X-Auth fejléc hiányzik, vagy a token nem tartozik regisztrált felhasználóhoz
 2. `404` - ha a címzett nem létezik
 3. `202` - egyébként
@@ -74,6 +76,7 @@ tartalmazza az üzeneteit elolvasni kívánó felhasználó tokenjét, amelynek 
 részével.
 
 Lehetséges válaszok:
+
 1. `401` - ha az X-Auth fejléc hiányzik, vagy a token nem tartozik regisztrált felhasználóhoz
 2. `403` - ha a token alapján nem a saját üzeneteit próbálná elolvasni a felhasználó
 3. `200` - egyébként. Ilyenkor a válasz törzse tartalmazza a felhasználó üzeneteit egy JSON lista formájában. A lista
