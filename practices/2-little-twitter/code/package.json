@@ -1,0 +1,26 @@
+{
+  "name": "@emartech/LittleTwitter4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "mocha ./tests --recursive"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.2.0",
+    "koa-body": "^2.0.1",
+    "koa-router": "^7.1.1",
+    "koa-send": "^4.1.0",
+    "koa-static": "^3.0.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "fetch-mock": "^5.10.0",
+    "mocha": "^3.3.0",
+    "supertest": "^3.0.0"
+  }
+}
